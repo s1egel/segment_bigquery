@@ -79,6 +79,12 @@ explore: track_facts {
 #       sql_on: ${sessions_trk.looker_visitor_id} = ${user_session_facts.looker_visitor_id}
 #       relationship: many_to_one
 
+
+# populate event filters for funnel explore below
+explore: event_list {
+  hidden: yes
+}
+
 explore: funnel_explorer {
   join: sessions_trk {
     view_label: "sessions"

@@ -20,6 +20,7 @@ view: funnel_explorer {
               ELSE NULL END
             ) as event3_time
       FROM ${track_facts.SQL_TABLE_NAME} as tracks_sessions_map
+      WHERE {% condition date_filter %} tracks_sessions_map.received_at {% endcondition %}
       GROUP BY 1
        ;;
   }
@@ -39,36 +40,46 @@ view: funnel_explorer {
     suggest_dimension: event_list.event_types
   }
 
+  filter: date_filter {
+    type: date
+  }
+
   dimension: session_id {
+    hidden: yes
     type: string
     primary_key: yes
     sql: ${TABLE}.session_id ;;
   }
 
   dimension_group: event1 {
+    hidden: yes
     type: time
     timeframes: [raw, time]
     sql: ${TABLE}.event1_time ;;
   }
 
   dimension_group: event2 {
+    hidden: yes
     type: time
     timeframes: [raw, time]
     sql: ${TABLE}.event2_time ;;
   }
 
   dimension_group: event3 {
+    hidden: yes
     type: time
     timeframes: [raw, time]
     sql: ${TABLE}.event3_time ;;
   }
 
   dimension: event1_before_event2 {
+    hidden: yes
     type: yesno
     sql: ${event1_time} < ${event2_time} ;;
   }
 
   dimension: event2_before_event3 {
+    hidden: yes
     type: yesno
     sql: ${event2_time} < ${event3_time} ;;
   }
@@ -79,11 +90,13 @@ view: funnel_explorer {
   }
 
   measure: count_sessions {
+    label: "Total Session Count"
     type: count_distinct
     sql: ${session_id} ;;
   }
 
   measure: count_sessions_event1 {
+    label: "Event 1: Session Count"
     type: count_distinct
     sql: ${session_id} ;;
 
@@ -94,6 +107,7 @@ view: funnel_explorer {
   }
 
   measure: count_sessions_event12 {
+    label: "Event 2: Session Count"
     type: count_distinct
     sql: ${session_id} ;;
 
@@ -114,6 +128,7 @@ view: funnel_explorer {
   }
 
   measure: count_sessions_event123 {
+    label: "Event 3: Session Count"
     type: count_distinct
     sql: ${session_id} ;;
 

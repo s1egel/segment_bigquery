@@ -15,7 +15,7 @@
   - name: page_views
     title: Total Pageviews
     type: single_value
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     measures: [pages.count_pageviews, pages.count_distinct_pageviews, pages.avg_page_view_duration_minutes,
       pages.count_visitors]
@@ -36,7 +36,7 @@
   - name: distinct_page_views
     title: Distinct Pageviews
     type: single_value
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     measures: [pages.count_pageviews, pages.count_distinct_pageviews, pages.avg_page_view_duration_minutes,
       pages.count_visitors]
@@ -57,7 +57,7 @@
   - name: user_count
     title: User Count
     type: single_value
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     measures: [pages.count_pageviews, pages.count_distinct_pageviews, pages.avg_page_view_duration_minutes,
       pages.count_visitors]
@@ -77,7 +77,7 @@
   - name: pageview_minutes
     title: Average Pageview Minutes
     type: single_value
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     measures: [pages.count_pageviews, pages.count_distinct_pageviews, pages.avg_page_view_duration_minutes,
       pages.count_visitors]
@@ -97,7 +97,7 @@
   - name: daily_page_views
     title: Daily Page Views
     type: looker_line
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     dimensions: [pages.received_date]
     measures: [pages.count_pageviews, pages.count_distinct_pageviews]
@@ -130,7 +130,7 @@
   - name: page_view_name
     title: Page Views by Type
     type: looker_pie
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     dimensions: [pages.name]
     measures: [pages.count_pageviews]
@@ -147,7 +147,7 @@
   - name: page_stats
     title: Page Stats
     type: table
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     dimensions: [pages.url]
     measures: [pages.avg_page_view_duration_minutes, pages.count_distinct_pageviews,

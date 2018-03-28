@@ -23,7 +23,7 @@
   - name: unique_users
     title: Unique Users
     type: single_value
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     measures: [track_facts.count_visitors]
     listen:
@@ -40,7 +40,7 @@
   - name: add_a_unique_name_4380
     title: Total Tracks
     type: single_value
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     measures: [tracks.count]
     listen:
@@ -55,7 +55,7 @@
   - name: add_a_unique_name_863
     title: Pages Count
     type: single_value
-    model: bigquery_segment_pages
+    model: segment_app_production_pages
     explore: event_facts
     measures: [pages.count_pageviews]
     listen:
@@ -126,7 +126,7 @@
   - name: add_a_unique_name_110
     title: Daily Tracks Count
     type: looker_line
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks.received_date]
     measures: [tracks.count]
@@ -160,7 +160,7 @@
   - name: add_a_unique_name_973
     title: Top 25 Event Types by Track Count
     type: looker_column
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks.event]
     measures: [tracks.count]

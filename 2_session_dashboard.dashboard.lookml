@@ -16,7 +16,7 @@
   - name: add_a_unique_name_787
     title: Total Sessions
     type: single_value
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     measures: [sessions_trk.count]
     listen:
@@ -29,7 +29,7 @@
   - name: add_a_unique_name_425
     title: Distinct Visitors
     type: single_value
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     measures: [sessions_trk.count_visitors]
     listen:
@@ -42,7 +42,7 @@
   - name: add_a_unique_name_676
     title: Average Sessions Per User
     type: single_value
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     measures: [sessions_trk.avg_sessions_per_user]
     listen:
@@ -57,7 +57,7 @@
   - name: add_a_unique_name_804
     title: Average Session Duration
     type: single_value
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     measures: [sessions_trk.avg_session_duration_minutes]
     listen:
@@ -74,7 +74,7 @@
   - name: add_a_unique_name_47
     title: Daily Session Count - Bounce Analysis
     type: looker_area
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     dimensions: [session_trk_facts.is_bounced_session, sessions_trk.start_date]
     pivots: [session_trk_facts.is_bounced_session]
@@ -97,7 +97,7 @@
   - name: add_a_unique_name_837
     title: Bounced Session Percentage
     type: looker_pie
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     dimensions: [session_trk_facts.is_bounced_session]
     measures: [sessions_trk.count]
@@ -113,7 +113,7 @@
   - name: add_a_unique_name_975
     title: Daily Sessions by New Users
     type: looker_area
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     dimensions: [sessions_trk.start_date, sessions_trk.is_first_session]
     pivots: [sessions_trk.is_first_session]
@@ -136,7 +136,7 @@
   - name: add_a_unique_name_692
     title: New User Session Percentage
     type: looker_pie
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     dimensions: [sessions_trk.is_first_session]
     measures: [sessions_trk.count]
@@ -151,7 +151,7 @@
   - name: add_a_unique_name_812
     title: Cohort - Sessions Layered by First Session Month
     type: looker_area
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     dimensions: [user_session_facts.first_month, sessions_trk.start_date]
     pivots: [user_session_facts.first_month]
@@ -182,7 +182,7 @@
   - name: add_a_unique_name_113
     title: Customer Cohorts
     type: table
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     dimensions: [sessions_trk.start_date, user_session_facts.first_month]
     pivots: [sessions_trk.start_month]
@@ -198,7 +198,7 @@
   - name: add_a_unique_name_629
     title: Conversion Funnel
     type: looker_column
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: sessions_trk
     measures: [session_trk_facts.count_viewed_product, session_trk_facts.count_signup]
     listen:

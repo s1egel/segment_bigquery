@@ -14,7 +14,7 @@
   - name: event
     title: 'First Event'
     type: text
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     field: track_facts.event
     default_value: 'login'
@@ -24,7 +24,7 @@
   - name: tracks_drop_off
     title: Tracks Drop Off
     type: looker_column
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     measures: [tracks.count, tracks_flow.event_2_drop_off, tracks_flow.event_3_drop_off,
       tracks_flow.event_4_drop_off, tracks_flow.event_5_drop_off]
@@ -56,7 +56,7 @@
   - name: event_flow
     title: Event Flow
     type: table
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks.event, tracks_flow.event_2, tracks_flow.event_3, tracks_flow.event_4,
       tracks_flow.event_5]
@@ -79,7 +79,7 @@
   - name: top_five_second
     title: Top 5 Second Events
     type: looker_bar
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_2]
     measures: [tracks.count]
@@ -115,7 +115,7 @@
   - name: top_five_third
     title: Top 5 Third Events
     type: looker_bar
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_3]
     measures: [tracks.count]
@@ -151,7 +151,7 @@
   - name: top_five_fourth
     title: Top 5 Fourth Events
     type: looker_bar
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_4]
     measures: [tracks.count]
@@ -187,7 +187,7 @@
   - name: top_five_fifth
     title: Top 5 Fifth Events
     type: looker_bar
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_5]
     measures: [tracks.count]
@@ -223,7 +223,7 @@
   - name: top_second
     title: Second Event
     type: table
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_2]
     measures: [tracks.count, sessions_trk.percent_of_total_count]
@@ -245,7 +245,7 @@
   - name: top_third
     title: Third Event
     type: table
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_3]
     measures: [tracks.count, sessions_trk.percent_of_total_count]
@@ -267,7 +267,7 @@
   - name: top_fourth
     title: Fourth Event
     type: table
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_4]
     measures: [tracks.count, sessions_trk.percent_of_total_count]
@@ -289,7 +289,7 @@
   - name: top_fifth
     title: Fifth Event
     type: table
-    model: bigquery_segment_tracks
+    model: segment_app_production_tracks
     explore: track_facts
     dimensions: [tracks_flow.event_5]
     measures: [tracks.count, sessions_trk.percent_of_total_count]

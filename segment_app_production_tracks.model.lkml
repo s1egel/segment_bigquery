@@ -6,6 +6,11 @@ include: "*.view"
 # include all dashboards in this project
 include: "*.dashboard"
 
+explore: tracks_view {
+  label: "Raw Event Reporting"
+  view_label: "Raw Events"
+}
+
 explore: sessions_trk {
   join: session_trk_facts {
     view_label: "sessions"
